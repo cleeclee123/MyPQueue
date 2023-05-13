@@ -1,0 +1,22 @@
+{
+  "name": "mypqueue",
+  "version": "1.0.0",
+  "description": "My Implementation of a Concurrent Promise Queue. Refactor of https://github.com/doo-gl/concurrent-promise-queue/tree/main",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "main": "npx tsc && node build/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/uuid": "^9.0.1",
+    "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "uuid": "^9.0.0",
+    "winston": "^3.8.2"
+  }
+}
