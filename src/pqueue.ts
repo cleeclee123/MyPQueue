@@ -28,7 +28,7 @@ export interface QueueOptions {
   maxThroughputPerUnitTime?: number;
 }
 
-export class NewConcurrentPromiseQueue<T> {
+export class MyConcurrentPromiseQueue<T> {
   private readonly maxNumberOfConcurrentPromises: number;
   private readonly unitOfTimeMillis: number;
   private readonly maxThroughputPerUnitTime: number;
