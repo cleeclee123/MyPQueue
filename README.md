@@ -1,16 +1,38 @@
 # MyPQueue
+
 My Implementation of a Concurrent Promise Queue. \
-Implementation heavily inspired/Refactor of [concurrent-promise-queue](https://github.com/doo-gl/concurrent-promise-queue/tree/main). Check it out!
+Implementation inspired by and Refactor of [concurrent-promise-queue](https://github.com/doo-gl/concurrent-promise-queue/tree/main). Check it out!
 
 From [concurrent-promise-queue](https://github.com/doo-gl/concurrent-promise-queue/tree/main), "Allows promises to be queued up and executed at a maximum rate defined by time or max concurrency"
 
 ## What's Different?
 
-- enhanced readbility
+### short verison
+
+- enhanced readability
 - better/more explicit encapsulation
 - using maps for promisesBeingExecuted and promiseExecutedCallbacks
 - try catch, error handling improvements, and add my logger with winston
 - spliting up execute() into multiple functions
+.
+
+### long verison
+
+- Error Handling and Logging: The first class MyConcurrentPromiseQueue uses the winston logger to provide improved logging and error handling. This can be seen in the execute() method, where it uses a try-catch block to log errors when they occur. In contrast, the second class, ConcurrentPromiseQueue, does not have any explicit error handling or logging.
+
+- Storage of Executing Promises and Callbacks: MyConcurrentPromiseQueue uses Map for storing executing promises (promisesBeingExecuted) and promise execution callbacks (promiseExecutedCallbacks). This provides better performance and more straightforward API compared to the plain object used in ConcurrentPromiseQueue.
+
+- Promise Handling: In MyConcurrentPromiseQueue, each promise supplier is invoked right away in the execute() method, and the result is handled through separate onPromiseFulfilled and onPromiseRejected methods. In ConcurrentPromiseQueue, each promise supplier is also invoked in the execute() method, but its result is handled right within this method.
+
+- Reattempt Mechanism: The ConcurrentPromiseQueue class has a mechanism to reattempt promise execution when the rate limit is exceeded (reattemptTimeoutId). This feature is absent in MyConcurrentPromiseQueue.
+
+- Option Defaults: MyConcurrentPromiseQueue sets default values for the queue options by destructuring and overwriting the defaults with the provided options. The ConcurrentPromiseQueue class sets defaults by using the logical OR operator to take the provided value or the default value if the provided value is not truthy.
+
+- Logger Control: The MyConcurrentPromiseQueue class includes a method turnOffLogger() to silence the logger. This method is not present in ConcurrentPromiseQueue.
+
+- Code Structuring: The MyConcurrentPromiseQueue class is more modular with different operations separated into distinct methods (onPromiseFulfilled, onPromiseRejected, finalizePromise). This makes the code easier to follow and manage compared to ConcurrentPromiseQueue, where these operations are performed within the execute() method itself.
+
+- Overall, these changes make MyConcurrentPromiseQueue more robust and manageable, especially in a production environment where error handling, logging, and code maintainability are crucial.
 
 ## Install
 
