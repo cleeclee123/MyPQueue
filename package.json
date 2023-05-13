@@ -1,6 +1,6 @@
 {
   "name": "mypqueue",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "My Implementation of a Concurrent Promise Queue. Refactor of https://github.com/doo-gl/concurrent-promise-queue/tree/main",
   "main": "index.js",
   "type": "module",
