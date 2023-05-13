@@ -12,7 +12,7 @@ const transactionStatus = (seconds: number, id: string) =>
 
 async function run() {
   const queue = new MyConcurrentPromiseQueue({
-    maxNumberOfConcurrentPromises: 10,
+    maxNumberOfConcurrentPromises: 5,
   });
 
   return await Promise.all([
@@ -27,20 +27,6 @@ async function run() {
     queue.addPromise(() => transactionStatus(6, "I")),
     queue.addPromise(() => transactionStatus(5, "J")),
     queue.addPromise(() => transactionStatus(1, "K")),
-    queue.addPromise(() => transactionStatus(2, "L")),
-    queue.addPromise(() => transactionStatus(3, "M")),
-    queue.addPromise(() => transactionStatus(3, "N")),
-    queue.addPromise(() => transactionStatus(2, "O")),
-    queue.addPromise(() => transactionStatus(9, "P")),
-    queue.addPromise(() => transactionStatus(5, "Q")),
-    queue.addPromise(() => transactionStatus(6, "R")),
-    queue.addPromise(() => transactionStatus(3, "T")),
-    queue.addPromise(() => transactionStatus(2, "U")),
-    queue.addPromise(() => transactionStatus(8, "V")),
-    queue.addPromise(() => transactionStatus(7, "W")),
-    queue.addPromise(() => transactionStatus(1, "X")),
-    queue.addPromise(() => transactionStatus(5, "Y")),
-    queue.addPromise(() => transactionStatus(7, "Z")),
   ]).then((results) => {
     console.log(results);
     return results;
