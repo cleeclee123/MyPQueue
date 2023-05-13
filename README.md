@@ -74,3 +74,14 @@ console.log(run());
 [2023-05-13T23:20:33.390Z] info: ce8e493c-ce5a-434e-b077-e5a3daa298a0 result, Your transaction is successful, I
 [2023-05-13T23:20:34.401Z] info: 8bc220be-00f9-47cd-aae3-b03c8ee51463 result, Your transaction is successful, H
 ```
+
+### misc
+
+```TypeScript
+// you can turn off logs like this
+const queue = new MyConcurrentPromiseQueue({
+  maxNumberOfConcurrentPromises: 5,
+});
+
+queue.turnOffLogger();
+```

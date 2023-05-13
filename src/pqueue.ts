@@ -147,4 +147,8 @@ export class MyConcurrentPromiseQueue<T> {
     this.promiseCompletedTimesLog.push(new Date(Date.now()));
     this.execute();
   }
+
+  public turnOffLogger(): void {
+    this.logger_.transports.forEach((t) => (t.silent = true));
+  }
 }
