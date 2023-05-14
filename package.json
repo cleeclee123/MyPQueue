@@ -1,15 +1,36 @@
 {
   "name": "mypqueue",
-  "version": "1.0.3",
-  "description": "My Implementation of a Concurrent Promise Queue. Refactor of https://github.com/doo-gl/concurrent-promise-queue/tree/main",
-  "main": "index.js",
+  "version": "1.0.4",
+  "description": "My Implementation of a Concurrent Promise Queue",
+  "main": "build/pqueue.js",
+  "types": "build/pqueue.d.ts",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "main": "npx tsc && node build/index.js"
+    "start": "npx tsc && node build/index.js"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "nodejs",
+    "concurrent",
+    "promise",
+    "queue",
+    "typescript",
+    "backend",
+    "concurrency",
+    "concurrent queues",
+    "concurrent queue",
+    "concurrent-queue",
+    "concurrent-queues",
+    "node",
+    "javascript",
+    "parralel",
+    "asynchronous",
+    "rate",
+    "rate limiting",
+    "rate limit",
+    "async"
+  ],
+  "author": "Chris Lee",
   "license": "ISC",
   "devDependencies": {
     "@types/uuid": "^9.0.1",
