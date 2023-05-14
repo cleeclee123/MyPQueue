@@ -1,6 +1,6 @@
 {
   "name": "mypqueue",
-  "version": "1.0.4",
+  "version": "1.0.8",
   "description": "My Implementation of a Concurrent Promise Queue",
   "main": "build/pqueue.js",
   "types": "build/pqueue.d.ts",

@@ -41,7 +41,7 @@ export class MyConcurrentPromiseQueue<T> {
   private promiseCompletedTimesLog: Date[] = [];
   protected logger_: Logger;
 
-  constructor(options: QueueOptions) {
+  constructor(options?: QueueOptions) {
     const defaultOptions = {
       maxNumberOfConcurrentPromises: 1,
       unitOfTimeMillis: 100,
